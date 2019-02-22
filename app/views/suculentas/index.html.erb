@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Suculentas</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Organo</th>
+    <th>Familia</th>
+    <th>Sustrato</th>
+    <th>Temperatura</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @suculentas.each do |suculenta| %>
+    <tr>
+      <td><%= suculenta.name %></td>
+      <td><%= suculenta.idOrgan %></td>
+      <td><%= suculenta.idFamily %></td>
+      <td><%= suculenta.idSustrato %></td>
+      <td><%= suculenta.temp %></td>
+      <td> <%= link_to "Edit suculenta", edit_suculenta_path(suculenta), class: "btn btn-xs btn-primary" %></td>
+      <td><%= link_to "Delete this suculenta", suculenta_path(suculenta),
+                      method: :delete,
+                      data: { confirm: "Are you sure you want to delete the suculenta?" },
+                      class: "btn btn-xs btn-danger" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Suculenta', new_suculenta_path %>

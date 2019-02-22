@@ -1,7 +1,11 @@
 class SuculentaController < InheritedResources::Base
 
+  def index
+      @suculenta = Suculenta.all
+  end
 
   def new
+      @suculentum = Suculenta.new
   end
 
   def allImages

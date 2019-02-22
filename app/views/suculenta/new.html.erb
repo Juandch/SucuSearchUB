@@ -3,20 +3,3 @@
 <%= render 'form', suculentum: @suculentum %>
 
 <%= link_to 'Back', suculenta_path %>
-
-<%= form_for :Suculenta, url: suculents_path do |f|%>
-  <%=f.label :name %><br>
-  <%=f.text_field :name %><br>
-  <%=f.label :organo %><br>
-  <%=f.select(:object_field, ['Tallo','Hoja','Tallo/Hoja'], {include_blank: "Select something"}, { :class => 'my_style_class' }) %><br>
-  <%=f.label :Familia %><br>
-  <%=f.select(:object_field, ['Cactacea','Agavaceae','Aizoaceae'], {include_blank: "Select something"}, { :class => 'my_style_class' }) %><br>
-  <%=f.label :Sustrato %><br>
-  <%=f.select(:object_field, ['Tierra','Arena','Gramilla/Carbon'], {include_blank: "Select something"}, { :class => 'my_style_class' }) %><br>
-  <%=f.label :temperatura %><br>
-  <%=f.text_field :temperatura %><br>
-  <%=f.label :image %><br>
-    <%=f.text_field :image %><br>
-
-  <%=f.submit Suculenta %>
-<% end %>

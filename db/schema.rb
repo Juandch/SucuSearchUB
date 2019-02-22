@@ -78,6 +78,18 @@ ActiveRecord::Schema.define(version: 2019_02_22_140957) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "suculentas", force: :cascade do |t|
+    t.serial "idSuculent", null: false
+    t.text "name"
+    t.integer "idOrgan"
+    t.integer "idFamily"
+    t.integer "idSustrato"
+    t.text "temp"
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sustratos", force: :cascade do |t|
     t.serial "idSustrato", null: false
     t.text "sustrato"

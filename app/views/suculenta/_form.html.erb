@@ -1,52 +1,61 @@
-<%= form_with(model: suculentum, local: true) do |form| %>
-  <% if @suculentum.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@suculentum.errors.count, "error") %> prohibited this suculentum from being saved:</h2>
+<div class="row">
+  <div class="col-12">
+    <%= form_with(model: suculentum, local: true) do |f|%>
+      <% if suculentum.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(suculentum.errors.count, "error") %> prohibited this suculentum from being saved:</h2>
 
-      <ul>
-      <% suculentum.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+            <% suculentum.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :idSuculent %>
-    <%= form.text_field :idSuculent %>
+      <div class="form-group">
+        <%=f.label :name, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%=f.text_field :name, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%=f.label :organo, class: 'col-sm-2 col-form-label' %>
+        <label for="exampleFormControlSelect2">Example multiple select</label>
+        <div class="col-sm-10">
+          <%=f.select(:object_field, ['Tallo','Hoja','Tallo/Hoja'], {include_blank: "Select something"}, { :class => 'form-control' }) %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%=f.label :Familia, class: 'col-sm-2 col-form-label' %>
+        <label for="exampleFormControlSelect2">Example multiple select</label>
+        <div class="col-sm-10">
+          <%=f.select(:object_field, ['Cactacea','Agavaceae','Aizoaceae'], {include_blank: "Select something"}, { :class => 'form-control' }) %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%=f.label :Sustrato, class: 'col-sm-2 col-form-label' %>
+        <label for="exampleFormControlSelect2">Example multiple select</label>
+        <div class="col-sm-10">
+          <%=f.select(:object_field, ['Tierra','Arena','Gramilla/Carbon'], {include_blank: "Select something"}, { :class => 'form-control' }) %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%=f.label :temperatura, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+          <%=f.text_field :temperatura, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="custom-file">
+        <%=f.label :image, class: 'col-sm-2 custom-file-label' %>
+        <div class="col-sm-10">
+          <%=f.text_field :image, class: 'custom-file-input' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <%= f.submit class: "btn btn-primary btn-lg" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_area :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :idOrgan %>
-    <%= form.number_field :idOrgan %>
-  </div>
-
-  <div class="field">
-    <%= form.label :idFamily %>
-    <%= form.number_field :idFamily %>
-  </div>
-
-  <div class="field">
-    <%= form.label :idSustrato %>
-    <%= form.number_field :idSustrato %>
-  </div>
-
-  <div class="field">
-    <%= form.label :temp %>
-    <%= form.text_area :temp %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_area :image %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
