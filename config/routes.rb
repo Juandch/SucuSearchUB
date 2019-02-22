@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :organs
+  resources :sustratos
+  resources :families
+  resources :suculenta
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users

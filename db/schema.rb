@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_19_150337) do
+ActiveRecord::Schema.define(version: 2019_02_22_140957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(version: 2019_02_19_150337) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "families", force: :cascade do |t|
+    t.serial "idFamily", null: false
+    t.text "family"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "organs", force: :cascade do |t|
+    t.serial "idOrgan", null: false
+    t.text "organ"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
@@ -50,6 +64,25 @@ ActiveRecord::Schema.define(version: 2019_02_19_150337) do
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
+  create_table "suculenta", force: :cascade do |t|
+    t.serial "idSuculent", null: false
+    t.text "name"
+    t.integer "idOrgan"
+    t.integer "idFamily"
+    t.integer "idSustrato"
+    t.text "temp"
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sustratos", force: :cascade do |t|
+    t.serial "idSustrato", null: false
+    t.text "sustrato"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
