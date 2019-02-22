@@ -5,23 +5,24 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Nombre</th>
-    <th>Organo</th>
-    <th>Familia</th>
-    <th>Sustrato</th>
-    <th>Temperatura</th>
+    <th class="text-center">Nombre</th>
+    <th class="text-center">Organo</th>
+    <th class="text-center">Familia</th>
+    <th class="text-center">Sustrato</th>
+    <th class="text-center">Temperatura</th>
+    <th class="text-center" colspan="2"></th>
   </tr>
   </thead>
   <tbody>
   <% @suculentas.each do |suculenta| %>
     <tr>
-      <td><%= suculenta.name %></td>
-      <td><%= suculenta.idOrgan %></td>
-      <td><%= suculenta.idFamily %></td>
-      <td><%= suculenta.idSustrato %></td>
-      <td><%= suculenta.temp %></td>
-      <td> <%= link_to "Edit suculenta", edit_suculenta_path(suculenta), class: "btn btn-xs btn-primary" %></td>
-      <td><%= link_to "Delete this suculenta", suculenta_path(suculenta),
+      <td><%= link_to suculenta.name, suculenta_path(suculenta) %></td>
+      <td class="text-center"><%= suculenta.idOrgan %></td>
+      <td class="text-center"><%= suculenta.idFamily %></td>
+      <td class="text-center"><%= suculenta.idSustrato %></td>
+      <td class="text-center"><%= suculenta.temp %></td>
+      <td class="text-center"><%= link_to "Edit suculenta", edit_suculenta_path(suculenta), class: "btn btn-xs btn-success" %></td>
+      <td class="text-center"><%= link_to "Delete this suculenta", suculenta_path(suculenta),
                       method: :delete,
                       data: { confirm: "Are you sure you want to delete the suculenta?" },
                       class: "btn btn-xs btn-danger" %></td>
@@ -32,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Suculenta', new_suculenta_path %>
+<%= link_to 'New Suculenta', new_suculenta_path, class: "btn btn-xs btn-success" %>

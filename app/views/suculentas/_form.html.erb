@@ -14,43 +14,47 @@
       <% end %>
       <div class="form-group">
         <%=f.label :name, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
+        <div class="col-sm-7">
           <%=f.text_field :name, class: 'form-control' %>
         </div>
       </div>
       <div class="form-group">
         <%=f.label 'Tipo de organos', class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
           <%=f.select(:idOrgan, [['Tallo', 1],['Hoja', 2],['Tallo/Hoja', 3]], {include_blank: "Select something"}, { :class => 'form-control' }) %>
         </div>
       </div>
       <div class="form-group">
         <%=f.label 'Familia', class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
           <%=f.select(:idFamily, [['Cactacea', 1],['Agavaceae', 2],['Aizoaceae', 3]], {include_blank: "Select something"}, { :class => 'form-control' }) %>
         </div>
       </div>
       <div class="form-group">
         <%=f.label 'Sustrato', class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
           <%=f.select(:idSustrato, [['Tierra', 1],['Arena', 2],['Gramilla/Carbon', 3]], {include_blank: "Select something"}, { :class => 'form-control' }) %>
         </div>
       </div>
       <div class="form-group">
         <%=f.label :temp, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
+        <div class="col-sm-7">
           <%=f.text_field :temp, class: 'form-control' %>
         </div>
       </div>
-      <div class="custom-file">
-        <%=f.label :image, class: 'col-sm-2 custom-file-label' %>
-        <div class="col-sm-10">
-          <%=f.text_field :image, class: 'custom-file-input' %>
+      <div class="form-group">
+        <%=f.label :image, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-6">
+          <div class="custom-file">
+            <%=f.file_field :image, class: 'custom-file-input' %>
+            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          </div>
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-12">
-          <%= f.submit class: "btn btn-primary btn-lg" %>
+          <%= link_to 'Back', suculentas_path, class: "btn btn-xs btn-danger" %>
+          <%= f.submit class: "btn btn-xs btn-success" %>
         </div>
       </div>
     <% end %>
