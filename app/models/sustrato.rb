@@ -1,0 +1,2 @@
+class Sustrato < ApplicationRecord
+end

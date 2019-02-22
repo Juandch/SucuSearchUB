@@ -1,0 +1,2 @@
+class Suculenta < ApplicationRecord
+end

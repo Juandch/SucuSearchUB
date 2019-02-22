@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idSuculent: 
+  name: MyText
+  idOrgan: 1
+  idFamily: 1
+  idSustrato: 1
+  temp: MyText
+  image: MyText
+
+two:
+  idSuculent: 
+  name: MyText
+  idOrgan: 1
+  idFamily: 1
+  idSustrato: 1
+  temp: MyText
+  image: MyText

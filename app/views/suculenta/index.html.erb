@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Suculenta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idsuculent</th>
+      <th>Name</th>
+      <th>Idorgan</th>
+      <th>Idfamily</th>
+      <th>Idsustrato</th>
+      <th>Temp</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suculenta.each do |suculentum| %>
+      <tr>
+        <td><%= suculentum.idSuculent %></td>
+        <td><%= suculentum.name %></td>
+        <td><%= suculentum.idOrgan %></td>
+        <td><%= suculentum.idFamily %></td>
+        <td><%= suculentum.idSustrato %></td>
+        <td><%= suculentum.temp %></td>
+        <td><%= suculentum.image %></td>
+        <td><%= link_to 'Show', suculentum %></td>
+        <td><%= link_to 'Edit', edit_suculentum_path(suculentum) %></td>
+        <td><%= link_to 'Destroy', suculentum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Suculentum', new_suculentum_path %>
