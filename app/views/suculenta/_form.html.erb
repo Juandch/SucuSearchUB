@@ -1,0 +1,52 @@
+<%= form_with(model: suculentum, local: true) do |form| %>
+  <% if @suculentum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@suculentum.errors.count, "error") %> prohibited this suculentum from being saved:</h2>
+
+      <ul>
+      <% suculentum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idSuculent %>
+    <%= form.text_field :idSuculent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idOrgan %>
+    <%= form.number_field :idOrgan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idFamily %>
+    <%= form.number_field :idFamily %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idSustrato %>
+    <%= form.number_field :idSustrato %>
+  </div>
+
+  <div class="field">
+    <%= form.label :temp %>
+    <%= form.text_area :temp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_area :image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

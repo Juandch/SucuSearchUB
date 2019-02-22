@@ -1,0 +1,27 @@
+<%= form_with(model: sustrato, local: true) do |form| %>
+  <% if sustrato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sustrato.errors.count, "error") %> prohibited this sustrato from being saved:</h2>
+
+      <ul>
+      <% sustrato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idSustrato %>
+    <%= form.text_field :idSustrato %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sustrato %>
+    <%= form.text_area :sustrato %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
