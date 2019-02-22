@@ -2,11 +2,11 @@
 <ul class="nav justify-content-end">
   <% if user_signed_in? %>
     <li class="nav-item">
-      <%= link_to 'Cerrar Cesion', destroy_user_session_path, method: :delete %>
+      <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete %>
     </li>
   <% else %>
     <li class="nav-item">
-      <%= link_to 'Iniciar Cesion',new_user_session_path%>
+      <%= link_to 'Iniciar Sesion',new_user_session_path%>
     </li>
     <li class="nav-item">
       <%= link_to 'Registrarse',new_user_registration_path%>
