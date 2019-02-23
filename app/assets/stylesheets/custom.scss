@@ -7,6 +7,10 @@ $gray-300           :   $dark-green;
 
 @import "bootstrap";
 
+   
+body {
+background-color: #D5D2D1;
+}
 #logo {
   float:left;
   font-size: 1.7em;
@@ -53,10 +57,11 @@ form input[type=submit] {
   height: 600px;
 
   h1 {
-    color: $white;
-    margin-bottom: 100px;
-    letter-spacing: -1px;
-    font-weight: bold;
+    margin-bottom: 0px;
+    height: 350px;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    background: transparent;
   }
 }
 
