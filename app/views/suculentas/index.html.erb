@@ -10,6 +10,7 @@
     <th class="text-center">Familia</th>
     <th class="text-center">Sustrato</th>
     <th class="text-center">Temperatura</th>
+    <th class="text-center">Imagen</th>
     <th class="text-center" colspan="2"></th>
   </tr>
   </thead>
@@ -21,6 +22,7 @@
       <td class="text-center"><%= suculenta.idFamily %></td>
       <td class="text-center"><%= suculenta.idSustrato %></td>
       <td class="text-center"><%= suculenta.temp %></td>
+      <td class="text-center"><div style="width:200px; heigth:200px"><%=image_tag(suculenta.image, style:'width:100%') %></div></td>
       <td class="text-center"><%= link_to "Edit suculenta", edit_suculenta_path(suculenta), class: "btn btn-xs btn-success" %></td>
       <td class="text-center"><%= link_to "Delete this suculenta", suculenta_path(suculenta),
                       method: :delete,

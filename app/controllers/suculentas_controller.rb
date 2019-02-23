@@ -6,4 +6,3 @@ class SuculentasController < InheritedResources::Base
     params.require(:suculenta).permit(:idSuculent, :name, :idOrgan, :idFamily, :idSustrato, :temp, :image)
   end
 end
-
